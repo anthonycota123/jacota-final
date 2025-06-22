@@ -4,6 +4,9 @@ import { MapPin, Hammer, DollarSign, Search } from "lucide-react";
 import { motion } from "framer-motion";
 import DealAnalyzer from "./pages/DealAnalyzer";
 import ContractorFinder from "./pages/ContractorFinder";
+import HardMoney from "./pages/HardMoney";
+import DealMap from "./pages/DealMap";
+import ContractorFinder from "./pages/ContractorFinder";
 
 function Home() {
   return (
@@ -96,6 +99,8 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/deal-analyzer" element={<DealAnalyzer />} />
         <Route path="/contractor-finder" element={<ContractorFinder />} />
+<Route path="/hard-money" element={<HardMoney />} />
+<Route path="/deal-map" element={<DealMap />} />
       </Routes>
     </Router>
   );
