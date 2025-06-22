@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { MapPin, Search, Sparkles, Hammer, DollarSign } from "lucide-react";
 import { motion } from "framer-motion";
 
-export default function JACotaDashboard() {
+export default function Dashboard() {
   const navigate = useNavigate();
 
   const tools = [
