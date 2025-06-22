@@ -1,24 +1,30 @@
 import React from "react";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
 
-const dummyDeals = [
-  { address: "3009 Merritt Ave", city: "Las Vegas", zip: "89102", price: "$325,000", type: "Fix & Flip" },
-  { address: "44 Acres - Churchill Rd", city: "Snowflake", zip: "85937", price: "$150,000", type: "Land Wholesale" },
-  { address: "Burned Duplex", city: "Phoenix", zip: "85041", price: "$35,000", type: "Fire Damage" },
+const mockDeals = [
+  { id: 1, lat: 36.174, lng: -115.137, address: "3009 Merritt Ave", price: "$325,000", type: "Flip" },
+  { id: 2, lat: 33.448, lng: -112.074, address: "Burned Duplex", price: "$35,000", type: "Fire" },
+  { id: 3, lat: 34.512, lng: -110.078, address: "44 Acres, AZ", price: "$150,000", type: "Land" },
 ];
 
 export default function DealMap() {
   return (
-    <div className="p-8 text-white max-w-5xl mx-auto">
-      <h2 className="text-3xl font-bold text-yellow-400 mb-6">Live Deal Map (Beta)</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {dummyDeals.map((deal, i) => (
-          <div key={i} className="border border-yellow-600 bg-neutral-900 rounded-xl p-4 shadow">
-            <p className="text-lg font-semibold text-yellow-300">{deal.address}</p>
-            <p className="text-sm text-zinc-300 italic">{deal.city}, {deal.zip}</p>
-            <p className="text-sm text-white mt-2">{deal.type} — <strong>{deal.price}</strong></p>
-          </div>
+    <div className="h-[90vh] w-full z-0">
+      <MapContainer center={[35.5, -112]} zoom={6} scrollWheelZoom={true} className="h-full w-full z-0">
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org">OpenStreetMap</a>'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        {mockDeals.map((deal) => (
+          <Marker key={deal.id} position={[deal.lat, deal.lng]}>
+            <Popup>
+              <strong>{deal.address}</strong><br />
+              {deal.type} – {deal.price}
+            </Popup>
+          </Marker>
         ))}
-      </div>
+      </MapContainer>
     </div>
   );
 }
