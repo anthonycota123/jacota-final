@@ -1,26 +1,17 @@
 {
-  "name": "ja-cota-dashboard",
-  "version": "1.0.0",
+  "name": "ja-cota-platform",
   "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
   "dependencies": {
-    "lucide-react": "^0.276.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "react-router-dom": "^6.17.0",
-    "framer-motion": "^10.16.1",
-    "react-leaflet": "^4.2.1",
-    "leaflet": "^1.9.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "react-router-dom": "^6.22.0"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.14",
-    "postcss": "^8.4.21",
-    "tailwindcss": "^3.3.2"
+    "vite": "^4.5.0"
   }
 }
