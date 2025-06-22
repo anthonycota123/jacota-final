@@ -6,7 +6,6 @@ import DealAnalyzer from "./pages/DealAnalyzer";
 import ContractorFinder from "./pages/ContractorFinder";
 import HardMoney from "./pages/HardMoney";
 import DealMap from "./pages/DealMap";
-import ContractorFinder from "./pages/ContractorFinder";
 
 function Home() {
   return (
